@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+
+<div class="container">
+  <header class="jumbotron">
+    <div class="container">
+      <h1>Welcome to FightCARDS!</h1>
+      <p>View our handpicked fighters from all over the world!</p>
+      <p><a class="btn btn-primary btn-lg" href="/fighters/new">Add New Fighter</a></p>
+    </div>
+  </header>
+
+  <div class="row" style="display: flex; flex-wrap: wrap;">
+    <% fighters.forEach(function(fighter){ %>
+      <div class="col-md-3 col-sm-6">
+        <div class="card text-center">
+          <img src="<%= fighter.image %>"/>
+          <div class="card-body">
+            <h4><%= fighter.name %></h4>
+          </div>
+          <p>
+            <a href="/fighters/<%= fighter._id %>" class="btn btn-primary">More Info</a>
+          </p>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+</div>
+
+<% include ../partials/footer %>
