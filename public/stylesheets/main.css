@@ -13,3 +13,61 @@
 #delete-form {
   display: inline;
 }
+
+.background-card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card-hover-container {
+  position: relative;
+  width: 100%;
+}
+
+.card-image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.card-hover-container:hover .card-image {
+  opacity: 0.3;
+}
+
+.card-hover-container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-family: 'Graduate', cursive;
+  font-size: 30px;
+}
+
+.width-100 {
+  width: 100%;
+}
