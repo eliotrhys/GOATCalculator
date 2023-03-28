@@ -1,136 +1,34 @@
-<% include ../partials/header %>
+<%- include ("../partials/header.ejs") %>
 
 <div class="container">
   <header class="jumbotron">
-    <div class="container">
-      <h1>Welcome to FightCARDS!</h1>
-      <p>View our handpicked fighters from all over the world!</p>
-      <p><a class="btn btn-primary btn-lg" href="/fighters/new">Add New Fighter</a></p>
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center">🐐🖩 Goat Calculator</h1>
+        <p>View our handpicked fighters from all over the world!</p>
+        <p><a class="btn btn-primary btn-lg" href="/fighters/new">Add New Fighter</a></p>
+      </div>
     </div>
   </header>
 
-  <div class="row" style="display: flex; flex-wrap: wrap;">
-    <div class="card-columns">
+  <div class="row">
 
-    <% fighters.forEach(function(fighter){ %>
-        <a href="/fighters/<%= fighter._id %>">
-          <div class="card-hover-container">
-            <div class="card background-card" style="background-image: url(<%= fighter.image %>); height: 500px; border: none; border-radius: 00px;">
-              <img src="<%= fighter.image %>" style="visibility: hidden;" class="card-image" />
-              <div class="overlay">
-                <div class="overlay-text"><%= fighter.name %></div>
+      <% fighters.forEach(function(fighter) { %>
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="/fighters/<%= fighter._id %>">
+            <div class="card-hover-container">
+              <div class="card background-card" style="background-image: url(<%= fighter.image %>); height: 500px; border: none; border-radius: 0px;">
+                <img src="<%= fighter.image %>" style="visibility: hidden;" class="card-image" />
+                <div class="overlay">
+                  <div class="overlay-text"><%= fighter.name %> <%= fighter.dateOfBirth %></div>
+                </div>
               </div>
             </div>
-          </div>
-        </a>
-    <% }); %>
-    
+          </a>
+        </div>
+      <% }); %>
+
   </div>
-
-  <!-- <div class="row">
-    <div class="col-md-3">
-
-      <div class="card-hover-container">
-        <div class="card background-card" style="background-image: url(https://wallpapercave.com/wp/wp1815831.jpg); height: 500px; border: none; border-radius: 00px;">
-          <img src="https://wallpapercave.com/wp/wp1815831.jpg" style="visibility: hidden;" class="card-image" />
-          <div class="overlay">
-            <div class="overlay-text">Conor McGregor</div>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-  </div> -->
-
-  <!-- <div class="row">
-    <div class="card-columns">
-
-      <div class="card-hover-container">
-        <div class="card background-card" style="background-image: url(https://wallpapercave.com/wp/wp1815831.jpg); height: 500px;">
-          <img src="https://wallpapercave.com/wp/wp1815831.jpg" style="visibility: hidden;" class="card-image" />
-          <div class="overlay">
-            <div class="overlay-text">Conor McGregor</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-hover-container">
-        <div class="card background-card" style="background-image: url(https://wallpapercave.com/wp/wp1815831.jpg); height: 400px;">
-          <img src="https://wallpapercave.com/wp/wp1815831.jpg" style="visibility: hidden;" class="card-image" />
-          <div class="overlay">
-            <div class="overlay-text">Conor McGregor</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-hover-container">
-        <div class="card background-card" style="background-image: url(https://wallpapercave.com/wp/wp1815831.jpg); height: 600px;">
-          <img src="https://wallpapercave.com/wp/wp1815831.jpg" style="visibility: hidden;" class="card-image" />
-          <div class="overlay">
-            <div class="overlay-text">Conor McGregor</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-hover-container">
-        <div class="card background-card" style="background-image: url(https://wallpapercave.com/wp/wp1815831.jpg); height: 300px;">
-          <img src="https://wallpapercave.com/wp/wp1815831.jpg" style="visibility: hidden;" class="card-image" />
-          <div class="overlay">
-            <div class="overlay-text">Conor McGregor</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-hover-container">
-        <div class="card background-card" style="background-image: url(https://wallpapercave.com/wp/wp1815831.jpg); height: 500px;">
-          <img src="https://wallpapercave.com/wp/wp1815831.jpg" style="visibility: hidden;" class="card-image" />
-          <div class="overlay">
-            <div class="overlay-text">Conor McGregor</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-hover-container">
-        <div class="card background-card" style="background-image: url(https://wallpapercave.com/wp/wp1815831.jpg); height: 500px;">
-          <img src="https://wallpapercave.com/wp/wp1815831.jpg" style="visibility: hidden;" class="card-image" />
-          <div class="overlay">
-            <div class="overlay-text">Conor McGregor</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-hover-container">
-        <div class="card background-card" style="background-image: url(https://wallpapercave.com/wp/wp1815831.jpg); height: 500px;">
-          <img src="https://wallpapercave.com/wp/wp1815831.jpg" style="visibility: hidden;" class="card-image" />
-          <div class="overlay">
-            <div class="overlay-text">Conor McGregor</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-hover-container">
-        <div class="card background-card" style="background-image: url(https://wallpapercave.com/wp/wp1815831.jpg); height: 500px;">
-          <img src="https://wallpapercave.com/wp/wp1815831.jpg" style="visibility: hidden;" class="card-image" />
-          <div class="overlay">
-            <div class="overlay-text">Conor McGregor</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-hover-container">
-        <div class="card background-card" style="background-image: url(https://wallpapercave.com/wp/wp1815831.jpg); height: 500px;">
-          <img src="https://wallpapercave.com/wp/wp1815831.jpg" style="visibility: hidden;" class="card-image" />
-          <div class="overlay">
-            <div class="overlay-text">Conor McGregor</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div> -->
-
-
 </div>
 
-<% include ../partials/footer %>
+<%- include ("../partials/footer") %>

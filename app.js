@@ -17,7 +17,9 @@ var commentRoutes = require('./routes/comments'),
     indexRoutes = require('./routes/index');
 
 // mongoose.connect("mongodb://localhost:27017/yelp_camp", { useNewUrlParser: true });
-mongoose.connect("mongodb://yelpcampuser:yelpcamp123@ds119024.mlab.com:19024/yelpcampeliot", { useNewUrlParser: true });
+// mongoose.connect("mongodb://yelpcampuser:yelpcamp123@ds119024.mlab.com:19024/yelpcampeliot", { useNewUrlParser: true });
+mongoose.set("strictQuery", false);
+mongoose.connect("mongodb+srv://eliot:DMQZQHKo1fF2gcE6@fightcardscluster.o2mroeb.mongodb.net/?retryWrites=true&w=majority", { useNewUrlParser: true }, () => {console.log("Connected to MongoDB")});
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
